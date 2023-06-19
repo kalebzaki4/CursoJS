@@ -10,7 +10,19 @@
   <button onclick="verificarNacionalidade()">Verificar</button>
   <p id="resultado"></p>
 
+  <script>
+    function verificarNacionalidade() {
+      var nacionalidadeInput = document.getElementById('nacionalidade');
+      var resultado = document.getElementById('resultado');
 
+      var nacionalidade = nacionalidadeInput.value;
+
+      if (nacionalidade.toLowerCase() !== 'brasil') {
+        resultado.textContent = 'Você é estrangeiro(a).';
+      } else {
+        resultado.textContent = 'Você é brasileiro(a).';
+      }
+    }
   </script>
 </body>
 </html>
