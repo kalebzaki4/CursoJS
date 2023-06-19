@@ -1,29 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nacionalidade</title>
-    <style>
-        body{
-            background-color: rgb(159, 159, 159);
-        }
-    </style>
+  <title>Verificação de Nacionalidade</title>
 </head>
 <body>
-    <h1>Nacionalidade</h1>
-    Seu pais é o <input type="text" name="txtna" id="txtna">
-    <input type="button" value="Verificar" onclick="verificar()">
-    <div id="resposta"></div>
+  <h1>Verificação de Nacionalidade</h1>
+  <label for="nacionalidade">Informe sua nacionalidade:</label>
+  <input type="text" id="nacionalidade">
+  <button onclick="verificarNacionalidade()">Verificar</button>
+  <p id="resultado"></p>
 
-    <script>
-        function verificar() {
-        var txt = document.querySelector('input#txtna')
-        var resposta = document.querySelector('div#resposta')
-        resposta.innerHTML = `sua nacionalidade é no(a) ${txt}`
-        if (txt == 'brasil')
-            resposta.innerHTML += 'voce é brasileiro!';
-        } resposta.innerHTML(`Continue sendo um grande patriota do(a) ${txt}`)
-    </script>
+  <script>
+    function verificarNacionalidade() {
+      var nacionalidadeInput = document.getElementById('nacionalidade');
+      var resultado = document.getElementById('resultado');
+
+      var nacionalidade = nacionalidadeInput.value;
+
+      if (nacionalidade.toLowerCase() !== 'brasil') {
+        resultado.textContent = 'Você é estrangeiro(a).';
+      } else {
+        resultado.textContent = 'Você é brasileiro(a).';
+      }
+    }
+  </script>
 </body>
 </html>
