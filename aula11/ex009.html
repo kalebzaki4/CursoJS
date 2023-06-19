@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nacionalidade</title>
+    <style>
+        body{
+            background-color: rgb(159, 159, 159);
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Nacionalidade</h1>
+    Seu pais é o <input type="text" name="txtna" id="txtna">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="resposta"></div>
+
+    <script>
+        function verificar() {
+        var txt = document.querySelector('input#txtna')
+        var resposta = document.querySelector('div#resposta')
+        resposta.innerHTML = `sua nacionalidade é no(a) ${txt}`
+        if (txt == 'brasil')
+            resposta.innerHTML += 'voce é brasileiro!';
+        } resposta.innerHTML(`Continue sendo um grande patriota do(a) ${txt}`)
+    </script>
 </body>
 </html>
