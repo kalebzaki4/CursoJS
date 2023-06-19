@@ -7,13 +7,49 @@
     <style>
         body {
             background-color: rgb(204, 204, 204);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #555;
+        }
+
+        #res {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <h1>Sistema de multas do detran</h1>
+    <h1>Sistema de multas do Detran</h1>
     Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h
-    <input type="button" value="verificar" onclick="calcular()">
+    <input type="button" value="Verificar" onclick="calcular()">
     <div id="res"></div>
 
     <script>
@@ -21,11 +57,11 @@
             var txtv = document.querySelector('input#txtvel')
             var vel = Number(txtv.value)
             var res = window.document.getElementById('res')
-            res.innerHTML = `Sua velocidade atual é de ${vel}Km/h <br>`
+            res.innerHTML = `Sua velocidade atual é de ${vel} Km/h <br>`
             if (vel > 60) {
-                res.innerHTML += `Você esta MULTADO por exesso de velocidade <br>`
+                res.innerHTML += `Você está MULTADO por excesso de velocidade <br>`
             }
-            res.innerHTML += `Diriga sempre com o cinto de segurança!`
+            res.innerHTML += `Dirija sempre com o cinto de segurança!`
         }
     </script>
 </body>
