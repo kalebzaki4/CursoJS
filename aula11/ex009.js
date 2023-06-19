@@ -1,8 +1,13 @@
-var pais = 'brasil'
-console.log(`vivendo em ${pais}`)
+var pais = 'frança';
+console.log(`Vivendo em ${pais}`);
 
-if (pais == 'brasil') {
-    console.log('voce é brasileiro!')
-} else {
-    console.log('voce é estrangeiro')
+function verificarNacionalidade(pais) {
+  if (pais.toLowerCase() === 'brasil') {
+    return 'Você é brasileiro(a)!';
+  } else {
+    return 'Você é estrangeiro(a)!';
+  }
 }
+
+var nacionalidade = verificarNacionalidade(pais);
+console.log(nacionalidade);
