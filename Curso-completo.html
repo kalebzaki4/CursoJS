@@ -64,6 +64,378 @@
     </script>
 </body>
 </html>-->
+ 
+    <!-- Ex004
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nome = window.prompt('Qual é o seu nome?') 
+        document.write(`Olá, <strong>${nome}<strong>! Seu nome tem ${nome.length} letras <br>`)
+        document.write(`Seu nome em maiusculas é ${nome.toUpperCase()} <br>`)
+        document.write(`Seu nome em minusculas é ${nome.toLowerCase()}`)
+    </script>
+</body>
+</html>
+    -->
+
+    <!-- Ex005
+        <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando DOM</title>
+    <style>
+        body{
+            background-color: #005a6c;
+            color: white;
+            font: normal 18pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>iniciando estudos com DOM</h1>
+    <p>aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em javascript</p>
+    <div>Clique em mim</div>
+    <script>
+        var p1 = document.getElementsByTagName('p')[0]
+        document.write(p1.innerText)
+    </script>
+</body>
+</html>
+    -->
+
+    <!-- Ex006
+        <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            font: normal 20pt arial;
+            background-color: rgb(42, 132, 42);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        interaja...
+    </div>
+
+    <script>
+        var a = document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+        function clicar() {
+            a.innerText = 'clicou!'
+            a.style.backgroundColor = 'red'
+        }
+
+        function entrar() {
+            a.innerText = 'entrou'
+        }
+
+        function sair() {
+            a.innerText = 'saiu'
+        }
+
+    </script>
+</body>
+</html>
+    -->
+
+    <!-- Ex007
+        <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Numeros</title>
+    <style>
+        body {
+            font: normal 18pt arial;
+        }
+
+        input {
+            font: normal 18pt arial;
+            width: 100px;
+        }
+        div#res {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res">resultado</div>
+
+    <script>
+        function somar() {
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.querySelector('input#txtn2')
+            var res = document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a ${s}`
+        }
+    </script>
+</body>
+</html>
+    -->
+
+    <!-- Ex008
+        var vel = 12
+    console.log(`A velocidade do seu carro é ${vel}Km/h`)
+    if (vel > 60) { //Condição simples!
+    console.log(`Você ultrapassou a velocidade permitida. MULTADO!`)
+    }
+    console.log(`Você esta na velocidade permitida!`)
+    console.log(`Dirija usando sempre o cinto de segurança!`)
+    -->
+
+    <!-- Ex009
+        var pais = 'frança';
+    console.log(`Vivendo em ${pais}`);
+
+    function verificarNacionalidade(pais) {
+      if (pais.toLowerCase() === 'brasil') {
+        return 'Você é brasileiro(a)!';
+      } else {
+       return 'Você é estrangeiro(a)!';
+      }
+    }
+
+    var nacionalidade = verificarNacionalidade(pais);
+    console.log(nacionalidade);
+
+    -->
+
+    <!-- Ex010
+        <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        body {
+            background-color: rgb(204, 204, 204);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #555;
+        }
+
+        #res {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de multas do Detran</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+        function calcular() {
+            var txtv = document.querySelector('input#txtvel')
+            var vel = Number(txtv.value)
+            var res = window.document.getElementById('res')
+            res.innerHTML = `Sua velocidade atual é de ${vel} Km/h <br>`
+            if (vel > 60) {
+                res.innerHTML += `Você está MULTADO por excesso de velocidade <br>`
+            }
+            res.innerHTML += `Dirija sempre com o cinto de segurança!`
+        }
+    </script>
+</body>
+</html>
+
+    -->
+
+    <!-- Ex011
+        var idade = 18
+if (idade < 18) {
+    console.log(`Nao pode votar`)
+} else {
+    if (idade < 18 || idade > 65) {
+        console.log('voto opcional')
+    } else {
+        console.log('Voto obrigatorio')
+    }
+}
+    -->
+
+    <!-- Ex012
+        var hora = 19
+console.log(`Agora são exatamente ${hora} horas`)
+if (hora < 12) {
+    console.log('Bom dia!')
+} else if (hora < 18 && hora > 12) {
+    console.log('Boa Tarde!')
+} else {
+    console.log('Boa Noite!')
+}
+    -->
+
+    <!-- Ex13
+        var agora = new Date()
+var diaSem = agora.getDay()
+
+switch(diaSem) {
+    case 0:
+        console.log('Domingo')
+        break
+    case 1: 
+        console.log('Segunda')
+        break
+    case 2:
+        console.log('Terça')
+        break
+    case 3: 
+        console.log('Quarta')
+        break
+    case 4:
+        console.log('Quinta')
+        break
+    case 5: 
+        console.log('Sexta')
+        break
+    case 6:
+        console.log('Sabado')
+        break
+    default:
+        console.log('[ERRO] Dia invalido!')
+        break
+}
+    -->
+
+    <!-- Ex14
+        function carregar() {
+    var msg = window.document.getElementById('msg')
+    var img = window.document.getElementById('imagem')
+    var data = new Date();
+    var hora = data.getHours();
+    msg.innerHTML = `Agora são ${hora} horas.`
+    if (hora >= 0 && hora < 12) {
+        // bom dia!
+        img.src = 'fotomanha.png'
+        document.body.style.background = '#e2cd9f'
+    } else if (hora >= 12 && hora <= 18) {
+        // boa tarde!
+        img.src = 'fototarde.png'
+        document.body.style.background = '#b9846f'
+
+    } else {
+        // boa noite!
+        img.src = 'fotonoite.png'
+        document.body.style.background = '#515154'
+
+    }
+}
+    -->
+
+    <!-- Ex015
+        function verificar() {
+    var data = new Date()
+    var ano = data.getFullYear()
+    var fAno = document.getElementById('txtano')
+    var res = document.getElementById('res')
+    if (fAno.value.lenght == 0 || fAno.value > ano ) {
+        window.alert('[ERRO] Verifique os dados e tente novamente!')
+    } else {
+        var fsex = document.getElementsByName('radsex')
+        var idade = ano - Number(fAno.value)
+        var genero = ''
+        var img = document.createElement('img')
+        img.setAttribute('id', 'foto')
+        if (fsex[0].checked) {
+            genero = 'Homem'
+            if (idade >=0 && idade < 10) {
+                // Criança!
+                img.setAttribute('src', 'foto-bebe-m.png')
+            } else if (idade >= 10 && idade < 18) {
+                // jovem
+                img.setAttribute('src', 'foto-jovem-m.png')
+            } else if (idade >= 18 && idade < 61) {
+                // Adulto
+                img.setAttribute('src', 'foto-adulto-m.png')
+            } else {
+                // Idoso
+                img.setAttribute('src', 'foto-idoso-m.png')
+            }
+        } else if (fsex[1].checked) {
+             genero = 'Mulher'
+             if (idade >=0 && idade < 10) {
+                // Criança!
+                img.setAttribute('src', 'foto-bebe-f.png')
+            } else if (idade >= 10 && idade < 18) {
+                // jovem
+                img.setAttribute('src', 'foto-jovem-f.png')
+            } else if (idade >= 18 && idade < 61) {
+                // Adulto
+                img.setAttribute('src', 'foto-adulto-f.png')
+            } else {
+                // Idoso
+                img.setAttribute('src', 'foto-idoso-f.png')
+            }
+        }
+        res.style.textAlign = 'center'
+        res.innerHTML = `Detectamos ${genero} com ${idade} anos.`
+        res.appendChild(img)
+    } 
+}
+    -->
+
 
 
 
