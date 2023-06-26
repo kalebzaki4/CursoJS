@@ -1,5 +1,5 @@
 var c = 1
 do { 
-    console.log(`Passo ${c}`)
+    console.log(`Vendo se o seu navegador suporta bem o nosso site em ${c}% `)
     c++
-} while (c <= 6)
+} while (c <= 100)
