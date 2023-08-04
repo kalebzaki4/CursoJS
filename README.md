@@ -29,7 +29,7 @@ Não pare por aqui! Explore também os seguintes recursos para expandir ainda ma
 
 - [Canal do Curso em Vídeo](https://www.youtube.com/user/cursosemvideo)
 - [Plataforma Alura](https://www.alura.com.br/)
-- Livros e tutoriais adicionais sobre JavaScript
+- [Roadmap sobre JavaScript](https://roadmap.sh/javascript)
 
 ## Sua Contribuição é Valorizada 🤝
 
